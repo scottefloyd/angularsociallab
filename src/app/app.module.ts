@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SocialpostsComponent } from './socialposts/socialposts.component';
 import { PostsComponent } from './posts/posts.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { PostFormComponent } from './post-form/post-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SocialpostsComponent,
     PostsComponent,
-    NewpostComponent
+    NewpostComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule, 

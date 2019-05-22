@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+input, label {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* width: 85%; */
+  padding: 10px;
+  margin: 20px;
+
+}

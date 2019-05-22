@@ -2,25 +2,18 @@
 <h1>Deep Thoughts</h1>
 
 <section id="posts">
-<button (click)="onSubmit()">New Thought</button>
-<ul id="thought-list">
-  <li *ngFor="let post of posts; index as i">
-    <h2>{{ post.subject }}</h2>
-    <p>{{ post.body }} </p>
-    <span>X</span>
+<button (click)="toggle()">New Thought</button>
 
-  </li>
-</ul>
+<post-form *ngIf="show" (onSubmitted)="onSubmit($event)">
+
+</post-form>
+
+<post *ngFor="let post of posts; index as i" [post]="post"></post>
+
+
 </section>
 
-<form class="add-thought" [hidden]="submitted" #addForm="ngForm" (ngSubmit)="addPost(addForm)">
-  <label for="">Title</label>
-  <input name="subjectToAdd" type="text" ngModel>
-  <label for="">Thought</label>
-  <input class="textarea" name="bodyToAdd" type="text" ngModel>
-  <button (click)="onSubmit()">Add Post</button>
 
-
-</form>
 
 </main>
+

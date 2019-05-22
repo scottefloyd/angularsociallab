@@ -8,7 +8,7 @@ import { Post } from "../post";
 })
 export class SocialpostsComponent implements OnInit {
 
-  submitted: boolean = true;
+  show: boolean = false;
 
   posts: Post[] = [{
     subject: "hello",
@@ -26,17 +26,13 @@ export class SocialpostsComponent implements OnInit {
 
   constructor() { }
 
-  addPost(form): void {
-    
-    this.posts.push({
-			subject: form.value.subjectToAdd,
-			body: form.value.bodyToAdd
-		});
-    
+  onSubmit(post: Post) {
+    this.posts.unshift(post);
+    this.show = false;
   }
 
-  onSubmit() {
-    this.submitted = !this.submitted;
+  toggle() {
+    this.show = !this.show;
   }
 
   ngOnInit() {
